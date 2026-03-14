@@ -38,6 +38,8 @@ sudo apt install -y build-essential cmake git python3 python3-pip clang
 
 ## Building NanoTag
 
+To build everything using a single command, please clone this repository and execute [install.sh](install.sh). If you prefer to build NanoTag step by step, please follow the instructions in the sections below.
+
 ### Build Baseline MTE-Enabled Scudo
 
 ```sh

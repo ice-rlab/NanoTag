@@ -4,6 +4,15 @@ set -e
 sudo apt update
 sudo apt install -y build-essential cmake git python3 python3-pip clang
 
+mkdir -p ~/baseline-runtime
+
+cd baseline
+clang++ -fPIC -std=c++17 -march=armv8.5-a+memtag -msse4.2 -O2 -pthread -shared \
+  -I scudo/standalone/include -D SCUDO_USE_MTE_SYNC \
+  scudo/standalone/*.cpp \
+  -o ~/baseline-runtime/libscudo.so
+cd -
+
 mkdir -p ~/mte-sanitizer-runtime
 
 cd handler
