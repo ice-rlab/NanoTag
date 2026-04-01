@@ -28,6 +28,21 @@ Please cite the following [paper](https://arxiv.org/abs/2509.22027) if you use N
 - Termux, a terminal emulator for Android, which can be installed from the Google Play Store.
 - A chroot environment set up within Termux, such as Ubuntu 22.04 in our tested setup.
 
+### Structure of the Repository
+
+```
+nanotag/
+├── baseline/       # Unmodified MTE-enabled Scudo allocator (16-byte granularity baseline)
+├── handler/        # Custom tag mismatch signal handler for byte-granular overflow detection
+├── scudo/          # NanoTag's modified Scudo allocator with sampling-based tripwire allocation
+├── samples/        # Sample programs demonstrating overflow detection
+├── figs/           # Figures
+├── install.sh      # Quick installation script
+└── run-samples.sh  # Script to run sample programs
+```
+
+See [baseline/README.md](baseline/README.md), [handler/README.md](handler/README.md), and [scudo/README.md](scudo/README.md) for details on each component.
+
 ### Dependency Libraries
 
 ```sh
