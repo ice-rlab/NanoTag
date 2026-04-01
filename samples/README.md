@@ -28,13 +28,19 @@ LD_PRELOAD=~/mte-sanitizer-runtime/handler.so:~/mte-sanitizer-runtime/libscudo.s
 LD_PRELOAD=~/mte-sanitizer-runtime/handler.so:~/mte-sanitizer-runtime/libscudo.so ./test_oob_short_granule
 ```
 
-Both overflows are detected. For `test_oob_short_granule`, the report identifies the short granule:
+Both overflows are detected. For `test_oob_cross_granule`, you will see a report like this:
+
+![](../figs/test_oob_cross_granule.png)
+
+For `test_oob_short_granule`, the report identifies the short granule:
 
 ```
 Tag Mismatch Fault (SYNC). PC: 0x60b9f107fc, Instruction: 0x39402901, Fault Address: 0x40b9f16c1a, Memory Tag: 0x3, Address Tag: 0x3
 Short Granule. Permitted Bytes: 5, Short Granule Start Byte: 10
 [Register File Dump]
 ```
+
+![](../figs/test_oob_short_granule.png)
 
 ### With Baseline MTE-Enabled Scudo
 

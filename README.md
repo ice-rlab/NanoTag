@@ -43,6 +43,8 @@ nanotag/
 
 See [baseline/README.md](baseline/README.md), [handler/README.md](handler/README.md), and [scudo/README.md](scudo/README.md) for details on each component.
 
+See [samples/README.md](samples/README.md) for details on the sample programs and how to build and run them.
+
 ### Dependency Libraries
 
 ```sh
