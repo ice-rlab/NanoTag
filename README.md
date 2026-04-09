@@ -47,10 +47,21 @@ See [samples/README.md](samples/README.md) for details on the sample programs an
 
 ### Dependency Libraries
 
-```sh
-sudo apt update
+Please install the following libraries in your chroot environment to build NanoTag:
 
-sudo apt install -y build-essential cmake git python3 python3-pip clang
+```sh
+apt update
+
+apt install -y build-essential cmake git python3 python3-pip clang
+```
+
+## Quick Start
+
+To quickly get started with NanoTag, you can run the following command to build all the components and run the sample programs:
+
+```sh
+bash ./install.sh
+bash ./run-samples.sh
 ```
 
 ## Building NanoTag
